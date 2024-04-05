@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 31 16:47:46 2024
+
+@author: torycat
+"""
+import numpy as nump
+from sklearn import preprocessing
+
+input_data = nump.array([[2.1, -1.9, 5.5], [-1.5, 2.4, 3.5]])
+input_data2 = nump.array([[0.5, -7.9, 5.6], [5.9, 2.3, -5.8]])
+
+
+data_binarized = preprocessing.Binarizer(threshold=0.5, copy=False).transform(input_data)
+
+data_binarized2 = preprocessing.Binarizer(threshold=0.5, copy=False).transform(input_data2)
+
+print("\nBinarized data:\n", data_binarized)
+print("\nBinarized data:\n", data_binarized2)
